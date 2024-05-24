@@ -13,8 +13,8 @@
 #define SCLK   0x20
 
 // Connections to MAX7219 via SPI port on AVR chip
-// I'm actually using a ready-made MAX7219 board and red LED
-// matrix display, Deal Extreme (dx.com) SKU #184854
+// I'm actually using four ready-made MAX7219 boards and red LED
+// matrix displays, Deal Extreme (dx.com) SKU #184854
 #define slaveSelectPin 10  // CS pin
 #define SDAPin 11          // DIN pin
 #define SCLKPin 13         // CLK pin
@@ -31,11 +31,10 @@
 // Size of LED matrix
 #define MAXX 16
 #define MAXY 16
-#define MAXROWS 16
 
 
 // The pixel buffer, 32 bytes
-unsigned short FrameBuffer[MAXY];
+unsigned short int FrameBuffer[MAXY];
 
 
 #define A (1 << 0)
@@ -280,4 +279,3 @@ void max7219write(const unsigned char reg, const unsigned short val)
   SPI.transfer(val & 0xff);
   LEDOUT |= CS;     //  digitalWrite(slaveSelectPin, HIGH);
 }
-
