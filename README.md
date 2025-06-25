@@ -11,3 +11,11 @@ frame buffer in the code treats this as a 256-bit (32-byte) bitmap.
 
 The main loop draws a simple animation.
 
+## Pinouts and Connections ##
+
+|Arduino | Name | MAX7219 Display |
+|--------|------|-----------------|
+| D10    | CS   | CS              |
+| D11    | SDA  | DIN             |
+| D13    | SCLK | CLK             |
+
